@@ -12,6 +12,7 @@ namespace api.Controllers
 
         public IEnumerable<TItem> Of<TItem>(Func<TItem> generateItem)
             => Count.Times(i => generateItem());
-                //.OrderBy(n => Sort ? n : default(TItem));
+                // This should trigger a broken build
+                //.OrderBy(n => Sort ? n : default(TItem)); 
     }
 }
