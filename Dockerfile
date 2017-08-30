@@ -13,6 +13,8 @@ RUN dotnet restore tests/tests.csproj
 COPY . .
 
 # test
+# let dotnet test know that we are running inside team city for better logging output
+ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test tests/tests.csproj
 
 # publish
